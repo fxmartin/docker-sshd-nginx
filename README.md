@@ -48,7 +48,10 @@ manage.sh ssh
 ```
 
 ## Notes
-Just don't forget to add private key (yeah, I know) from **ssh_keys** folder to you '~/.ssh/' and add it via 'ssh-add'
+Just don't forget to add private key (yeah, I know) from **ssh_keys** folder to you '~/.ssh/' and add it via
+```
+ssh-add -K ~/.ssh/id_rsa_docker
+```
 
 Removed docker calls via sudo as it is not best practice for a local docker installation.
 

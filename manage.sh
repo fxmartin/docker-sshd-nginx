@@ -15,7 +15,7 @@ IMAGE="fxmartin/docker-sshd-nginx"
 
 BUILD_CMD="docker build -t=$IMAGE ."
 RUN_CMD="docker run -d -p 55522:22 -p 55580:80 $IMAGE"
-SSH_CMD="ssh root@localhost -p 55522"
+SSH_CMD="ssh root@172.16.194.132 -p 55522 -i ~/.ssh/id_rsa_docker"
 
 ID=`docker ps | grep "$IMAGE" | head -n1 | cut -d " " -f1`
 IP=`docker-machine env docker | grep "DOCKER_HOST" | cut -d "/" -f3 | cut -d ":" -f1`
