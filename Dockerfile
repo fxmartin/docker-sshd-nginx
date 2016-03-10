@@ -1,6 +1,7 @@
 ##############################################################################
-# Dockerfile for building Base image for monolithic image T24.R15
-# This base image contains only initial environment variables set-up & Java
+# Dockerfile for building docker container with passwordless sshd server and
+# nginx serving static page. This is mostly a template for creating more
+# useful docker images.
 #
 # Build with docker build -t fxmartin/ubuntu-sshd-nginx .
 #

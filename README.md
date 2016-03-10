@@ -53,7 +53,7 @@ Just don't forget to add private key (yeah, I know) from **ssh_keys** folder to 
 ssh-add -K ~/.ssh/id_rsa_docker
 ```
 
-Removed docker calls via sudo as it is not best practice for a local docker installation.
+*Removed docker calls via sudo as it is not best practice for a local docker installation.*
 
 ## Sources
 Forked from [viliusl/docker-sshd-nginx](https://github.com/viliusl/docker-sshd-nginx)
