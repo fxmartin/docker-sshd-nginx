@@ -8,10 +8,10 @@
 # Version: 1.10
 ##############################################################################
 
-SCRIPT=build-t24h2-docker.sh
+SCRIPT=manage.sh
 VERSION=1.10
 
-IMAGE="fxmartin/ubuntu-sshd-nginx"
+IMAGE="fxmartin/docker-sshd-nginx"
 
 BUILD_CMD="docker build -t=$IMAGE ."
 RUN_CMD="docker run -d -p 55522:22 -p 55580:80 $IMAGE"

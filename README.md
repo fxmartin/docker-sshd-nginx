@@ -47,7 +47,10 @@ manage.sh start
 manage.sh ssh
 ```
 
+## Notes
 Just don't forget to add private key (yeah, I know) from **ssh_keys** folder to you '~/.ssh/' and add it via 'ssh-add'
+
+Removed docker calls via sudo as it is not best practice for a local docker installation.
 
 ## Sources
 Forked from [viliusl/docker-sshd-nginx](https://github.com/viliusl/docker-sshd-nginx)
