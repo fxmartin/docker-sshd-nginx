@@ -19,6 +19,7 @@ Mainly to apply [best practices](https://docs.docker.com/articles/dockerfile_bes
 * Do NOT use DEBIAN_FRONTEND=noninteractive
 
 As a matter of fact it proved to reduce the image size by a mere 45 Mb for what it's worth.
+
 REPOSITORY | TAG | IMAGE ID | CREATED | SIZE
 ---------- | --- | -------- | ------- | ----
 fxmartin/ubuntu-sshd-nginx-precise | latest | 349d75c7471c | 48 minutes ago      214.9 MB
