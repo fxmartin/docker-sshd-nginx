@@ -1,24 +1,24 @@
 #!/bin/bash
 ##############################################################################
 # Script for managing docker image
-# Based on manage.sh from https://github.com/viliusl/docker-sshd-nginx
+# Based on manage.sh from https://github.com/fxmartin/docker-sshd-nginx
 # Syncordis Copyright 2016
 # Author: FX
 # Date: 10-mar-2016
-# Version: 1.10
+# Version: 1.11
 ##############################################################################
 
 SCRIPT=manage.sh
-VERSION=1.10
+VERSION=1.11
 
 IMAGE="fxmartin/docker-sshd-nginx"
 
-BUILD_CMD="docker build -t=$IMAGE ."
-RUN_CMD="docker run -d -p 55522:22 -p 55580:80 $IMAGE"
-SSH_CMD="ssh root@172.16.194.132 -p 55522 -i ~/.ssh/id_rsa_docker"
-
 ID=`docker ps | grep "$IMAGE" | head -n1 | cut -d " " -f1`
 IP=`docker-machine env docker | grep "DOCKER_HOST" | cut -d "/" -f3 | cut -d ":" -f1`
+
+BUILD_CMD="docker build -t=$IMAGE ."
+RUN_CMD="docker run -d -p 55522:22 -p 55580:80 $IMAGE"
+SSH_CMD="ssh root@$IP -p 55522 -i ~/.ssh/id_rsa_docker"
 
 is_running() {
 	[ "$ID" ]
@@ -60,6 +60,7 @@ case "$1" in
         ssh)
                 if is_running; then
                 	echo "Attaching to running image '$IMAGE' with Id: '$ID'"
+                	echo "command: $SSH_CMD"
                 	$SSH_CMD
                 else
                 	echo "Image '$IMAGE' is not running"

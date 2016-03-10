@@ -3,12 +3,12 @@
 # nginx serving static page. This is mostly a template for creating more
 # useful docker images.
 #
-# Build with docker build -t fxmartin/ubuntu-sshd-nginx .
+# Build with docker build -t fxmartin/docker-sshd-nginx .
 #
 # Syncordis Copyright 2016
 # Author: FX
-# Date: 09-mar-2016
-# Version: 1.0
+# Date: 10-mar-2016
+# Version: 1.11
 ##############################################################################
 
 FROM ubuntu:trusty
