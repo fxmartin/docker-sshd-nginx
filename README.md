@@ -18,12 +18,12 @@ Mainly to apply [best practices](https://docs.docker.com/articles/dockerfile_bes
 * Don’t do RUN apt-get update on a single line  (but along with apt-get install)
 * Do NOT use DEBIAN_FRONTEND=noninteractive
 
-As a matter of fact it proved to reduce the image size by a mere 45 Mb for what it's worth.
+As a matter of fact it proved to reduce the image size by a mere 45 Mb (based on ubuntu/precise) for what it's worth.
 
 REPOSITORY | TAG | IMAGE ID | CREATED | SIZE
 ---------- | --- | -------- | ------- | ----
-fxmartin/ubuntu-sshd-nginx-precise | latest | 349d75c7471c | 48 minutes ago      214.9 MB
 fxmartin/ubuntu-sshd-nginx | latest | 3f48e0953b35 | About an hour ago | 270.4 MB
+fxmartin/ubuntu-sshd-nginx-precise | latest | 349d75c7471c | 48 minutes ago | 214.9 MB
 viliusl/ubuntu-sshd-nginx | latest | bae0d68cf679 | 22 months ago | 259.1 MB
 
 ## Usage
