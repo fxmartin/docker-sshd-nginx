@@ -16,25 +16,32 @@ Mainly to apply [best practices](https://docs.docker.com/articles/dockerfile_bes
 * Ease later changes by sorting multi-line arguments alphanumerically
 * Avoid RUN apt-get upgrade or apt-get dist-upgrade -y --no-install-recommends
 * Don’t do RUN apt-get update on a single line  (but along with apt-get install)
-* Do NOT use DEBIAN_FRONTEND=noninteractive, as per http://docs.docker.com/faq/
+* Do NOT use DEBIAN_FRONTEND=noninteractive
 
 As a matter of fact it proved to reduce the image size by a mere 45 Mb for what it's worth.
 
 ## Usage
-_*TODO: replace by own image link when it will have been committed*_
-You can download [this image](https://index.docker.io/u/viliusl/ubuntu-sshd-nginx/) from public [Docker Registry](https://index.docker.io/).
+You can download [this image](https://hub.docker.com/r/fxmartin/docker-sshd-nginx/) from public [Docker Registry](https://hub.docker.com/).
+A bash script is provided: manage.sh, which allows to manage the container, considering that it won't stop by itself due to supervisor daemon:
+* start: to start the container
+* stop: to stop the container
+* build: build the docker image
+* ssh: ssh to the container
+* web: launch chrome with the IP automatically retrieved from the script
 
 **Run using command:**
 ```
-docker run -d -p 55522:22 -p 55580:80 viliusl/ubuntu-sshd-nginx
+docker run -d -p 55522:22 -p 55580:80 fxmartin/ubuntu-sshd-nginx
+or
+manage.sh start
 ```
 
 **Connect via ssh:**
 ```
-ssh root@localhost -p 55522
+manage.sh ssh
 ```
 
 Just don't forget to add private key (yeah, I know) from **ssh_keys** folder to you '~/.ssh/' and add it via 'ssh-add'
 
 ## Sources
-Inspired from [viliusl/docker-sshd-nginx](https://github.com/viliusl/docker-sshd-nginx)
+Forked from [viliusl/docker-sshd-nginx](https://github.com/viliusl/docker-sshd-nginx)
