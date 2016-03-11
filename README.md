@@ -50,7 +50,7 @@ manage.sh ssh
 
 Image 1 - nginx welcome page
 
-![nginx welcome page](https://raw.github.com/fxmartin/docker-t24-db/master/screenshots/nginx_welcome_page.png)
+![nginx welcome page](https://raw.github.com/fxmartin/docker-sshd-nginx/master/screenshots/nginx_welcome_page.png)
 
 ## Notes
 Just don't forget to add private key (yeah, I know) from **ssh_keys** folder to you '~/.ssh/' and add it via
