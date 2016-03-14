@@ -34,6 +34,7 @@ A bash script is provided: manage.sh, which allows to manage the container, cons
 * build: build the docker image
 * ssh: ssh to the container
 * web: launch chrome with the IP automatically retrieved from the script
+* proc: launch chrome with the supervisord web ui (user = admin, password = admin)
 
 **Run using command:**
 ```
@@ -51,6 +52,10 @@ manage.sh ssh
 Image 1 - nginx welcome page
 
 ![nginx welcome page](https://raw.github.com/fxmartin/docker-sshd-nginx/master/screenshots/nginx_welcome_page.png)
+
+Image 2 - supervisord web ui to manage processes
+
+![supervisord web ui](https://raw.github.com/fxmartin/docker-sshd-nginx/master/screenshots/supervisord_console.png)
 
 ## Notes
 Just don't forget to add private key (yeah, I know) from **ssh_keys** folder to you '~/.ssh/' and add it via

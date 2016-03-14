@@ -50,6 +50,15 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf && \
 ADD nginx/default           /etc/nginx/sites-available/default
 ADD nginx/index.html        /var/www/index.html
 
+# configure nginx to serve supervisord
+RUN echo "[inet_http_server]" >> /etc/supervisor/supervisord.conf && \
+	echo "port=127.0.0.1:9001" >> /etc/supervisor/supervisord.conf && \
+	echo "username=admin" >> /etc/supervisor/supervisord.conf && \
+	echo "password=admin" >> /etc/supervisor/supervisord.conf
+
+ADD nginx/supervisord /etc/nginx/sites-available/supervisord
+RUN ln -s /etc/nginx/sites-available/supervisord /etc/nginx/sites-enabled/supervisord
+
 # configure supervisor
 RUN mkdir -p /var/log/supervisor
 ADD supervisor/sshd.conf   /etc/supervisor/conf.d/sshd.conf

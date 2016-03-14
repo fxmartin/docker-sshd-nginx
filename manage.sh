@@ -14,10 +14,10 @@ VERSION=1.11
 IMAGE="fxmartin/docker-sshd-nginx"
 
 ID=`docker ps | grep "$IMAGE" | head -n1 | cut -d " " -f1`
-IP=`docker-machine env docker | grep "DOCKER_HOST" | cut -d "/" -f3 | cut -d ":" -f1`
+IP=`docker-machine env default | grep "DOCKER_HOST" | cut -d "/" -f3 | cut -d ":" -f1`
 
 BUILD_CMD="docker build -t=$IMAGE ."
-RUN_CMD="docker run -d -p 55522:22 -p 55580:80 $IMAGE"
+RUN_CMD="docker run -d -p 55522:22 -p 55580:80 -p 55591:91 $IMAGE"
 SSH_CMD="ssh root@$IP -p 55522 -i ~/.ssh/id_rsa_docker"
 
 is_running() {
