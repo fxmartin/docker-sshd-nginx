@@ -69,5 +69,6 @@ RUN apt-get clean
 
 EXPOSE 22
 EXPOSE 80
+EXPOSE 91
 
 CMD ["/usr/bin/supervisord", "-n"]

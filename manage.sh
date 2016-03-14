@@ -69,6 +69,9 @@ case "$1" in
 		web)
                 open -a "Google Chrome" "http://$IP:55580"
                 ;;
+        proc)
+                open -a "Google Chrome" "http://$IP:55591"
+                ;;
         *)
                 echo "Usage: $0 {build|start|stop|status|ssh|web}"
                 exit 1
